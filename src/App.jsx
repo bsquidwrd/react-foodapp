@@ -9,7 +9,7 @@ import FoodDetails from "./components/FoodDetails";
 
 function App() {
   const [foodData, setFoodData] = useState([]);
-  const [foodId, setfoodId] = useState("");
+  const [recipeId, setRecipeId] = useState("656329");
 
   return (
     <div className="App">
@@ -17,10 +17,10 @@ function App() {
       <Search setFoodData={setFoodData} />
       <Container>
         <InnerContainer>
-          <FoodList foodData={foodData} setfoodId={setfoodId} />
+          <FoodList foodData={foodData} setRecipeId={setRecipeId} />
         </InnerContainer>
         <InnerContainer>
-          <FoodDetails foodId={foodId} />
+          <FoodDetails recipeId={recipeId} />
         </InnerContainer>
       </Container>
     </div>
