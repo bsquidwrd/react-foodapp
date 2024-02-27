@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
-const apiKey = "";
 const searchUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
-export default function Search() {
+export default function Search({ setFoodData }) {
+  // Probably better ways to do this, but I really want to keep it out of git
+  const apiKey = localStorage.getItem("apiKey");
   const [query, setQuery] = useState("pizza");
+
   useEffect(() => {
     async function fetchFood() {
       const response = await fetch(
@@ -12,8 +14,9 @@ export default function Search() {
       );
       const data = await response.json();
       console.log(data.results);
+      setFoodData(data.results);
     }
-    // fetchFood();
+    fetchFood();
   }, [query]);
 
   return (
