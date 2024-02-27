@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./search.module.css";
 
+// Probably better ways to do this, but I really want to keep it out of git
+const apiKey = localStorage.getItem("apiKey");
 const searchUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
 export default function Search({ setFoodData }) {
-  // Probably better ways to do this, but I really want to keep it out of git
-  const apiKey = localStorage.getItem("apiKey");
   const [query, setQuery] = useState("pizza");
 
   useEffect(() => {
