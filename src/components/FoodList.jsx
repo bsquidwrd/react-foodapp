@@ -1,4 +1,5 @@
 import FoodItem from "./FoodItem";
+import styles from "./foodlist.module.css";
 
 export default function FoodList({ foodData }) {
   return (
