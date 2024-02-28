@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./fooddetails.module.css";
+import ItemList from "./ItemList";
 
 // Probably better ways to do this, but I really want to keep it out of git
 const apiKey = localStorage.getItem("apiKey");
@@ -51,17 +52,7 @@ export default function FoodDetails({ recipeId }) {
         </div>
 
         <h2>Ingredients</h2>
-        {recipe.extendedIngredients.map((ingredient) => (
-          <div>
-            <img
-              src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`}
-            />
-            <h3>{ingredient.name}</h3>
-            <h3>
-              {ingredient.amount} {ingredient.unit}
-            </h3>
-          </div>
-        ))}
+        <ItemList items={recipe.extendedIngredients} isLoading={isLoading} />
 
         <h2>Instructions</h2>
         <div className={styles.recipeInstructions}>
