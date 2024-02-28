@@ -1,2 +1,4 @@
 .foodList {
+  display: flex;
+  flex-wrap: wrap;
 }
