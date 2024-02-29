@@ -7,8 +7,5 @@ export default defineConfig({
   base: "/react-foodapp/",
   server: {
     port: 3002,
-    watch: {
-      usePolling: true,
-    },
   },
 });

@@ -16,7 +16,6 @@ export default function FoodDetails({ recipeId }) {
         `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`
       );
       const data = await response.json();
-      console.log(data);
       setRecipe(data);
       setIsLoading(false);
     }
@@ -28,7 +27,9 @@ export default function FoodDetails({ recipeId }) {
       <div className={styles.recipeCard}>
         <h1 className={styles.recipeName}>{recipe.title}</h1>
 
-        <img className={styles.recipeImage} src={recipe.image} />
+        <div className={styles.imageContainer}>
+          <img className={styles.recipeImage} src={recipe.image} />
+        </div>
         <div className={styles.recipeDetails}>
           <span>
             <strong>⏲️ {recipe.readyInMinutes} Minutes</strong>

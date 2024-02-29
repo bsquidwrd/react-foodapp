@@ -14,7 +14,6 @@ export default function Search({ setFoodData }) {
         `${searchUrl}?apiKey=${apiKey}&query=${query}`
       );
       const data = await response.json();
-      console.log(data.results);
       setFoodData(data.results);
     }
     fetchFood();
