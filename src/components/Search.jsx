@@ -16,7 +16,9 @@ export default function Search({ setFoodData }) {
       const data = await response.json();
       setFoodData(data.results);
     }
-    fetchFood();
+    if (apiKey) {
+      fetchFood();
+    }
   }, [query]);
 
   return (

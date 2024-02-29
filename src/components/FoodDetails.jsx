@@ -19,7 +19,9 @@ export default function FoodDetails({ recipeId }) {
       setRecipe(data);
       setIsLoading(false);
     }
-    fetchRecipe();
+    if (apiKey) {
+      fetchRecipe();
+    }
   }, [recipeId]);
 
   return (
